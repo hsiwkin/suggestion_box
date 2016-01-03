@@ -7,7 +7,28 @@
 <p>
     <strong>Upvotes: </strong> {{singlePost.upvotes}}
 </p>
+
+<br>
 <hr>
+
+<form ng-submit="addComment()">
+    <p><strong>Leave a comment</strong></p>
+
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Your comment ..." ng-model="comment"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+<br>
+
 <p>
-    <strong>Comments:</strong><br>
+    <strong>Comments:</strong>
 </p>
+
+<table class="table table-striped">
+
+    <tr ng-repeat="comment in comments">
+        <td>{{comment}}</td>
+    </tr>
+</table>
