@@ -1,1 +1,25 @@
-<h3>Welcome in our base directory</h3>
+<h3>List of suggestions</h3>
+
+<br>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Upvotes</th>
+        <th>Comments</th>
+
+    </tr>
+    <tr ng-repeat="post in posts">
+        <td>{{post.title}}</td>
+        <td>{{post.upvotes}}</td>
+        <td><a href="#/suggestion/{{$index}}">link</a></td>
+    </tr>
+</table>
+
+<form ng-submit="addSuggestion()" style="margin-top: 50px;">
+    <h3>Submit Your Suggestion</h3>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Great ideas here" ng-model="title"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Suggest</button>
+</form>
