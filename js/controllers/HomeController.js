@@ -8,9 +8,6 @@ app.controller('HomeController', ['$scope', 'suggestions', function($scope, sugg
             return;
         }
 
-        //if ($scope.title) {
-        console.log('title: ' + $scope.title);
-
         var suggestion = {
             title: $scope.title,
             upvotes: 0,
@@ -20,7 +17,6 @@ app.controller('HomeController', ['$scope', 'suggestions', function($scope, sugg
         suggestions.posts.push(suggestion);
 
         $scope.title = '';
-        //}
 
     }
 
