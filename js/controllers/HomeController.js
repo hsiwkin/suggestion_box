@@ -3,14 +3,24 @@ app.controller('HomeController', ['$scope', 'suggestions', function($scope, sugg
     $scope.posts = suggestions.posts;
 
     $scope.addSuggestion = function() {
-        //TODO
 
-        if ($scope.title) {
-            console.log('title: ' + $scope.title);
-            suggestions.posts.push()
-
-            $scope.title = '';
+        if (!$scope.title) {
+            return;
         }
+
+        //if ($scope.title) {
+        console.log('title: ' + $scope.title);
+
+        var suggestion = {
+            title: $scope.title,
+            upvotes: 0,
+            comments: []
+        };
+
+        suggestions.posts.push(suggestion);
+
+        $scope.title = '';
+        //}
 
     }
 
