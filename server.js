@@ -3,7 +3,7 @@ var app = express();
 
 app.use(express.static(__dirname + '/public/'));
 
-var port = 6666;
+var port = 3000;
 
 app.listen(port);
 console.log('server running at port ' + port);
